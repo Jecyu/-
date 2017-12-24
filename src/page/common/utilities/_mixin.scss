@@ -1,0 +1,16 @@
+/*
+ * @Author: jecyu 
+ * @Date: 2017-12-22 22:31:35 
+ * @Last Modified by: jecyu
+ * @Last Modified time: 2017-12-22 22:37:11
+ */
+@mixin setColorAndHover($baseColor) {
+    // color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 40%);
+    }
+}
+
+@mixin setShadow {
+    box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .4);
+}

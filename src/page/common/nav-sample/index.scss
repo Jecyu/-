@@ -1,0 +1,36 @@
+/**
+ * @Author: Jecyu
+ * @Date: 2017-10-26 10:36:53 pm 
+ * @Modified By: JeCyu 
+ * @Last Modified time: 2017-10-27 5:12:42 pm 
+ */
+
+$basecolor: rgb(237, 115, 29);
+$item1: rgb(238, 238, 238);
+$item2: #fff;
+
+/* 导航 */
+.nav {    
+    display: flex;
+    align-items: center;
+
+    height: 5rem;
+    padding-left: 4rem;
+
+    font-size: 1.6rem;
+    color: $item2;
+    background: $basecolor;
+
+    .brand {
+        display: inline-block;
+        margin-right: 4rem;
+        font-size: 2.4rem;
+    }
+    .page-name {
+        display: inline-block;
+        color: #fff;
+    }
+}
+
+
+

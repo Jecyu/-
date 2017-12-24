@@ -1,0 +1,80 @@
+/**
+ * @Author: Jecyu
+ * @Date: 2017-10-26 8:30:39 am 
+ * @Modified By: JeCyu 
+ * @Last Modified time: 2017-11-09 12:32:52 pm 
+ */
+$basecolor: #99cccc;
+$item1: #99b3cc;
+$item2: #9999cc;
+$item3: #99ccb3;
+$item4: #b3cc99;
+$item5: #4f9c9c;
+$item6: #cc9999;
+$fontColor: #4f9c9c;
+$active: #9c4f4f;
+
+/* footer */
+.common-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    min-height: 37rem;
+    padding-top: 8rem;
+
+    color: #ccc;
+    background: darken($basecolor, 30%);
+    background: rgb(47, 57, 57);
+
+    .footer-nav {
+        float: right;
+        font-size: 0;
+    }
+
+    .footer-other {
+        float: left;
+
+        .contact {
+            margin: 2rem 0 1rem 0;
+        }
+
+        .official-account {
+            margin-bottom: 1rem;
+            height: 10rem;
+            width: 10rem;
+
+            .QRcode {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .copy-right {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.footer-nav-item {
+    float: left;
+    display: inline-block; // margin: 0 5rem;
+    width: 10rem;
+    font-size: 1.4rem;
+
+    & + & {
+        margin-left: 5rem;
+    }
+
+    .item-title {
+        font-size: 1.8rem;
+        color: #fff;
+        font-weight: normal;
+    }
+
+    .item-list {
+        li {
+            margin-top: 2rem;
+        }
+    }
+}
