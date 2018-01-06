@@ -2,17 +2,20 @@
  * @Author: jecyu 
  * @Date: 2017-12-23 23:33:20 
  * @Last Modified by: jecyu
- * @Last Modified time: 2017-12-24 18:53:18
+ * @Last Modified time: 2018-01-06 22:37:21
  */
-$basecolor: #99cccc;
-$item1: #99b3cc;
-$item2: #9999cc;
-$item3: #99ccb3;
-$item4: #b3cc99;
-$item5: #4f9c9c;
-$item6: #cc9999;
+
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
+
 $fontColor: #4f9c9c;
-$active: #9c4f4f;
+$hover: #2091c5;
+$active: #2091c5;
 @mixin setColorAndHover($baseColor) {
     color: $baseColor;
     &:hover {
@@ -44,6 +47,14 @@ $active: #9c4f4f;
     font-size: 1.6rem;
     color: dark($fontColor, 30%);
 
+    a {
+        color: darken($fontColor, 30%);
+
+        &:hover {
+            color: $active;
+        }
+    }
+
     .nav-logo {
         position: absolute;
         top: 50%;
@@ -66,7 +77,9 @@ $active: #9c4f4f;
             transition: all 0.5s ease;
 
             &.active {
-                color: $active;
+                a {
+                    color: $active;
+                }
                 border-bottom: 0.2rem solid $active;
             }
 
@@ -120,8 +133,10 @@ $active: #9c4f4f;
             transition: all 0.5s ease;
 
             &:hover {
-                color: $active;
-                background: lighten($basecolor, 25%);
+                background: rgba($color: #ccc, $alpha: 0.3);
+                a {
+                    color: $hover;
+                }
             }
         }
     }

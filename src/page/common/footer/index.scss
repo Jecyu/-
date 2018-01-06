@@ -4,19 +4,20 @@
  * @Modified By: JeCyu 
  * @Last Modified time: 2017-11-09 12:32:52 pm 
  */
-$basecolor: #99cccc;
-$item1: #99b3cc;
-$item2: #9999cc;
-$item3: #99ccb3;
-$item4: #b3cc99;
-$item5: #4f9c9c;
-$item6: #cc9999;
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
 $fontColor: #4f9c9c;
-$active: #9c4f4f;
+$hoverColor: #2091c5;
+$activeColor: #2091c5;
 
 /* footer */
 .common-footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -75,6 +76,13 @@ $active: #9c4f4f;
     .item-list {
         li {
             margin-top: 2rem;
+        }
+    }
+
+    a {
+        color: #ccc;
+        &:hover {
+            color: darken(#ccc, 20%);
         }
     }
 }
