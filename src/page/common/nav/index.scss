@@ -14,8 +14,8 @@ $item5: #2091c5;
 $item6: #3ec520;
 
 $fontColor: #4f9c9c;
-$hover: #2091c5;
-$active: #2091c5;
+$hover: #20c5a7;
+$active: #20c5a7;
 @mixin setColorAndHover($baseColor) {
     color: $baseColor;
     &:hover {
@@ -30,8 +30,10 @@ $active: #2091c5;
 /* nav */
 .nav-wrap {
     position: fixed;
-    position: relative;
+    left: 0;
+    top: 0;
     z-index: 99999;
+
     height: 7rem;
     width: 100%;
     // background: lighten($basecolor, 0);
