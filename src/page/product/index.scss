@@ -1,0 +1,63 @@
+/*
+ * @Author: jecyu 
+ * @Date: 2018-01-10 23:22:19 
+ * @Last Modified by: jecyu
+ * @Last Modified time: 2018-01-11 23:10:44
+ */
+@import "../common/utilities/_mixin";
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
+$fontColor: #5f5f5f;
+@mixin setColorAndHover($baseColor) {
+    // color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 40%);
+    }
+}
+
+@mixin setShadow {
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+// section-introduce
+.section-introduce {
+    position: relative;
+    height: 52rem;
+    width: 100%;
+    background: url(../../image/product_banner-1.jpg) no-repeat 100%;
+    // -webkit-backdrop-filter: blur(10);
+}
+
+.banner-wrap {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    .banner-title {
+        color: $item4;
+        font-size: 3.2rem;
+        font-weight: normal;
+    }
+
+    .sub-title {
+        font-size: 1.8rem;
+        color: darken($item4, 30%);
+    }
+    .banne-desc {
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+    .apply-btn {
+        margin-top: 10rem;
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 5%;
+            color: #fff;
+            background: $item4;
+        }
+    }
+}

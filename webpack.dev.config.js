@@ -28,7 +28,8 @@ let getHtmlConfig = function(name, title) {
 // entry
 const entry = {
     common: __dirname + "/src/page/common/index.js",
-    index: __dirname + "/src/page/index/index.js"
+    index: __dirname + "/src/page/index/index.js",
+    product: __dirname + "/src/page/product/index.js"
 };
 
 const devServer = {
@@ -55,6 +56,7 @@ const plugins = [
     // 把css单独打包到文件里
     new ExtractTextPlugin("css/[name].css"),
     new HtmlWebpackPlugin(getHtmlConfig("index", "首页")),
+    new HtmlWebpackPlugin(getHtmlConfig("product", "软件下载")),
     // 让$指向jQuery
     new webpack.ProvidePlugin({
         // Automatically load modules instead of having to import or require them everywhere.
@@ -100,14 +102,19 @@ let config = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", "postcss-loader"]
+                    use: ["css-loader", "resolve-url-loader", "postcss-loader"]
                 })
             },
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", "sass-loader", "postcss-loader"]
+                    use: [
+                        "css-loader",
+                        "resolve-url-loader",
+                        "sass-loader",
+                        "postcss-loader"
+                    ]
                 })
             },
             {
