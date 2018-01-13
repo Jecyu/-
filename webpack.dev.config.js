@@ -29,7 +29,8 @@ let getHtmlConfig = function(name, title) {
 const entry = {
     common: __dirname + "/src/page/common/index.js",
     index: __dirname + "/src/page/index/index.js",
-    product: __dirname + "/src/page/product/index.js"
+    product: __dirname + "/src/page/product/index.js",
+    aboutus: __dirname + "/src/page/aboutus/index.js"
 };
 
 const devServer = {
@@ -57,6 +58,7 @@ const plugins = [
     new ExtractTextPlugin("css/[name].css"),
     new HtmlWebpackPlugin(getHtmlConfig("index", "首页")),
     new HtmlWebpackPlugin(getHtmlConfig("product", "软件下载")),
+    new HtmlWebpackPlugin(getHtmlConfig("aboutus", "公司介绍")),
     // 让$指向jQuery
     new webpack.ProvidePlugin({
         // Automatically load modules instead of having to import or require them everywhere.

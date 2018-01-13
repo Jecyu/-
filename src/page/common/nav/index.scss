@@ -29,7 +29,8 @@ $active: #20c5a7;
 
 /* nav */
 .nav-wrap {
-    position: fixed;
+    // position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     z-index: 99999;
