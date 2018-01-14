@@ -30,7 +30,8 @@ const entry = {
     common: __dirname + "/src/page/common/index.js",
     index: __dirname + "/src/page/index/index.js",
     product: __dirname + "/src/page/product/index.js",
-    aboutus: __dirname + "/src/page/aboutus/index.js"
+    aboutus: __dirname + "/src/page/aboutus/index.js",
+    "service-item": [__dirname + "/src/page/service-item/index.js"]
 };
 
 const devServer = {
@@ -59,6 +60,7 @@ const plugins = [
     new HtmlWebpackPlugin(getHtmlConfig("index", "首页")),
     new HtmlWebpackPlugin(getHtmlConfig("product", "软件下载")),
     new HtmlWebpackPlugin(getHtmlConfig("aboutus", "公司介绍")),
+    new HtmlWebpackPlugin(getHtmlConfig("service-item", "服务项目")),
     // 让$指向jQuery
     new webpack.ProvidePlugin({
         // Automatically load modules instead of having to import or require them everywhere.
