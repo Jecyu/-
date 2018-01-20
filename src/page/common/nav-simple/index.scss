@@ -1,0 +1,61 @@
+/**
+ * @Author: Jecyu
+ * @Date: 2017-10-26 10:36:53 pm 
+ * @Modified By: JeCyu 
+ * @Last Modified time: 2017-10-27 5:12:42 pm 
+ */
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
+$fontColor: #5f5f5f;
+@mixin setColorAndHover($baseColor) {
+    // color: $baseColor;
+    &:hover {
+        background: lighten($baseColor, 40%);
+    }
+}
+
+@mixin setShadow {
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+/* 导航栏 */
+.nav-bar {
+    height: 7.5rem;
+    box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+
+    .nav-logo {
+        height: 7.5rem;
+        display: flex;
+        align-items: center;
+        float: left;
+
+        .page-name {
+            font-size: 1.8rem;
+            color: $fontColor;
+        }
+    }
+
+    .nav-login {
+        height: 7.5rem;
+        display: flex;
+        align-items: center;
+        float: right;
+
+        .login-btn {
+            width: 6.4rem;
+            height: 3.2rem;
+            margin-left: 0.4rem;
+            border: 0;
+            border-radius: 0.4rem;
+
+            background: $item4;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

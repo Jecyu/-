@@ -1,10 +1,10 @@
 // import { request } from 'https';
 
-
-'use strict';
+"use strict";
 
 // require('bootstrap/dist/css/bootstrap.min.css');
-require('font-awesome/scss/font-awesome.scss');
-require('./nav/index.js');
-require('./layout.scss');
-require('./footer/index.scss');
+require("font-awesome/scss/font-awesome.scss");
+require("./nav/index.js");
+require("./nav-simple/index.js");
+require("./layout.scss");
+require("./footer/index.scss");
