@@ -2,7 +2,7 @@
  * @Author: jecyu 
  * @Date: 2018-01-19 21:17:15 
  * @Last Modified by: jecyu
- * @Last Modified time: 2018-01-20 23:09:33
+ * @Last Modified time: 2018-01-21 11:50:12
  */
 
 @import "../common/utilities/_mixin";
@@ -77,8 +77,10 @@ $fontColor: #5f5f5f;
         cursor: pointer;
         color: #fff;
         transition: 0.3s;
-    } // pass-button-verifyCodeSend
+    }
+    // pass-button-verifyCodeSend
     .pass-button-verifyCodeSend {
+        @extend .pass-button;
         float: left;
         width: 16rem;
         height: 4rem;

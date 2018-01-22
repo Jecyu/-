@@ -71,33 +71,56 @@
     </section>
 </footer>
 <!-- passport-login-pop -->
-<!-- <div class="modal" id="passport-login-pop">
-    <div class="modal-dialog">
-        <div class="content">
-            <div class="modal-header modal-dragable">
-                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+<div class="modal-login" id="passport-login-pop">
+    <div class="modal-login__dialog">
+        <div class="modal-login__content">
+            <div class="modal-login__header modal-dragable">
+                <button id="js-closebtn" type="button" class="modal-login__closebtn" data-dismiss="modal" aria-label="close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">登录以太网账户</h4>
+                <h4 class="modal-login__title">登录以太网账户</h4>
             </div>
-            <div class="modal-body">
-                <div class="pass-login-pop-img">
+            <div class="modal-login__body clearfix">
+                <div class="modal-login__img">
                     <img src="../../image/QRcode.png" alt="">
                 </div>
-                <div class="pass-login-pop-content">
-                    <div class="pass-login-pop-form">
-                        <div class="pass-login">
-                            <p class="pass-generalErrorWrapper"></p>
-                            <form action="" autocomplete="off"> </form>
-                        </div>
-                        <div class="pass-login pass-sms"></div>
-                        <div class="pass-login pass-qrcode"></div>
-                        div.
+                <div class="modal-login__form">
+                    <div class="pass-method">
+                        <form class="pass-form" action="" autocomplete="off">
+                            <p class="pass-form__errorWrapper">
+                                <span class="pass-form__error"></span>
+                            </p>
+                            <p class="pass-form__smsWrapper">
+                                <a href="###" class="pass-form__smsBtn">短信快捷登录</a>
+                            </p>
+                            <p class="pass-form__item pass-form__item-username">
+                                <label for="" class="pass-form__label">
+                                    <i class="fa fa-user-o"></i>
+                                </label>
+                                <input type="text" class="pass-form__inpt" placeholder="手机/邮箱/用户名" autocomplete="new-password">
+                            </p>
+                            <p class="pass-form__item pass-form__item-pwd">
+                                <label for="" class="pass-form__label">
+                                    <i class="fa fa-user-o"></i>
+                                </label>
+                                <input type="password" class="pass-form__inpt" placeholder="密码" autocomplete="new-password">
+                            </p>
+                            <p class="pass-form__item pass-form__item-remember">
+                                <input type="checkbox" class="pass-form__remember" checked>
+                                <label for="" class="">下次自动登录</label>
+                            </p>
+                            <p class="pass-form__item pass-form__item-submit">
+                                <input type="submit" class="pass-form__inpt pass-form__submit" value="登录">
+                                <a href="./user-register.html" class="pass-form__reglink">立即注册</a>
+                                <a href="###" class="pass-form__fgtpwd">登录遇到问题</a>
+                            </p>
+                        </form>
                     </div>
+                    <div class="pass-method pass-method-sms"></div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js">
 </script>
