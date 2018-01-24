@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require('html-loader!./layout/head-common.html')  %>
+</head>
+
+<body>
+    <header>
+        <%= require('html-loader!./layout/nav-simple-2.html')  %>
+    </header>
+    <main>
+        <div class="mod-forgot" id="forgot-pwd">
+            <div class="mod-nav">
+                <h1 class="mod-nav__title">找回密码</h1>
+            </div>
+            <div class="mod-body inner-center">
+                <ul class="mod-forgot__nav clearfix">
+                    <li class="mod-forgot__item mod-forgot__item--is-actived">
+                        <h3 class="mod-item__title">
+                            <span class="mod-forgot__order">1</span>确认帐号</h3>
+                    </li>
+                    <li class="mod-forgot__item">
+                        <h3 class="mod-item__title">
+                            <span class="mod-forgot__order">2</span>安全验证</h3>
+                    </li>
+                    <li class="mod-forgot__item">
+                        <h3 class="mod-item__title">
+                            <span class="mod-forgot__order">3</span>重置密码</h3>
+                    </li>
+                </ul>
+                <div class="mod-forgot__step">
+                    <form class="mod-form" action="/?getpassindex" method="post">
+                        <div class="mod-form__item clearfix">
+                            <input class="mod-forgot__input mod-forgot__input--is-error" type="text" placeholder="请你输入用户名/邮箱/手机">
+                            <!-- <label class="mod-forgot__label" for="">请您输入用户名/邮箱/手机</label> -->
+                            <span class="mod-forgot__tip">请您输入用户名/邮箱/手机</span>
+                        </div>
+                        <div class="mod-form__item clearfix">
+                            <input class="mod-forgot__input  mod-forgot__input-vscode" type="text" placeholder="请你输入验证码">
+                            <!-- <label class="mod-forgot__label" for="">请您输入验证码</label> -->
+                            <img class="mod-forgot__img-vscode" src=".." alt="验证码图片">
+                            <a class="mod-forgot__img-change" href="###">换一张</a>
+                        </div>
+                        <div class="mod-form__item">
+                            <input class="mod-forgot__btn-submit " type="submit " value="下一步 ">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%= require('html-loader!./layout/footer.html')  %>
+        <%= require('html-loader!./layout/foot.html')  %>
+</body>
+
+</html>

@@ -32,7 +32,8 @@ const entry = {
     product: __dirname + "/src/page/product/index.js",
     aboutus: __dirname + "/src/page/aboutus/index.js",
     "service-item": [__dirname + "/src/page/service-item/index.js"],
-    "user-register": [__dirname + "/src/page/user-register/index.js"]
+    "user-register": [__dirname + "/src/page/user-register/index.js"],
+    "user-pass-reset": [__dirname + "/src/page/user-pass-reset/index.js"]
 };
 
 const devServer = {
@@ -63,6 +64,7 @@ const plugins = [
     new HtmlWebpackPlugin(getHtmlConfig("aboutus", "公司介绍")),
     new HtmlWebpackPlugin(getHtmlConfig("service-item", "服务项目")),
     new HtmlWebpackPlugin(getHtmlConfig("user-register", "注册以太生物帐号")),
+    new HtmlWebpackPlugin(getHtmlConfig("user-pass-reset", "找回密码")),
     // 让$指向jQuery
     new webpack.ProvidePlugin({
         // Automatically load modules instead of having to import or require them everywhere.
