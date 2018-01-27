@@ -1,0 +1,148 @@
+/*
+ * @Author: jecyu 
+ * @Date: 2018-01-25 23:53:32 
+ * @Last Modified by: jecyu
+ * @Last Modified time: 2018-01-27 14:01:58
+ */
+
+$basecolor: hsl(230, 71%, 31%);
+$item1: hsl(79, 72%, 45%);
+$item2: hsl(133, 72%, 45%);
+$item3: hsl(229, 72%, 45%);
+$item4: hsl(169, 72%, 45%);
+$item5: hsl(199, 72%, 45%);
+$item6: hsl(109, 72%, 45%);
+$fontColor: hsl(0, 0%, 37%);
+@mixin setColorAndHover($baseColor) {
+  // color: $baseColor;
+  &:hover {
+    background: lighten($baseColor, 40%);
+  }
+}
+
+@mixin setShadow {
+  box-shadow: 0.1rem 0.1rem 1rem hsla(0, 0%, 0%, 0.4);
+}
+
+/*-----------------------------*\
+  #section-introduce
+\*-----------------------------*/
+
+.section-introduce {
+  position: relative;
+  min-height: 22rem;
+  width: 100%;
+  background: $item4 url(../../image/new/mark-banner.png) no-repeat 100%; // -webkit-backdrop-filter: blur(10);
+  background-size: 100% 100%;
+
+  .download-btn {
+    margin-top: 10rem;
+  }
+
+  .banner {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 0 2rem;
+    text-align: left;
+
+    .banner__title {
+      font-size: 3.6rem;
+      font-weight: normal;
+      text-align: ceter;
+    }
+
+    .banner__desc {
+      max-width: 50rem;
+      margin-top: 2rem;
+      font-size: 1.6rem; // text-align: justify;
+    }
+  }
+}
+
+/*-----------------------------*\
+  #section-project
+\*-----------------------------*/
+.section-project {
+  .section-project__header {
+    padding: 6.5rem 0 3rem;
+    text-align: center;
+    color: darken($fontColor, 10%);
+
+    .section-project__title {
+      position: relative;
+      font-size: 3rem;
+
+      // title-separator
+      &::after {
+        content: "";
+        display: block;
+        height: 0.3rem;
+        width: 5rem;
+        margin: 1.5rem auto;
+        background-color: $item4;
+      }
+    }
+  }
+}
+
+.project-wrap {
+  height: 52rem;
+  padding: 5rem 5rem;
+  border-top: 0.1rem dashed hsl(210, 19%, 88%);
+
+  .project__text {
+    width: 25rem;
+    height: 45rem;
+    padding-top: 10rem;
+  }
+
+  .project__title {
+    border-left: 0.4rem solid;
+    border-color: $item4;
+    padding-left: 1rem;
+
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+    color: darken($color: $fontColor, $amount: 10);
+  }
+
+  .project__desc-list {
+    display: block;
+    margin-top: 3.2rem;
+
+    .project_desc-item {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 3.5rem;
+      color: hsl(0, 0%, 20%);
+    }
+
+    .icon--check {
+      display: inline-block;
+      margin: 0.8rem 1rem 0 0;
+      font-size: 2.4rem;
+      vertical-align: -0.2rem;
+      color: $item4;
+    }
+  }
+
+  .left-part {
+    float: left;
+    display: block;
+    margin-right: 10rem;
+  }
+
+  .right-part {
+    float: right;
+    display: block;
+    height: 45rem;
+  }
+
+  .project__image {
+    width: 65rem;
+    max-height: 42rem;
+    margin-top: -0.5rem;
+  }
+}

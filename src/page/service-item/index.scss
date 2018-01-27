@@ -2,10 +2,9 @@
  * @Author: jecyu 
  * @Date: 2018-01-14 11:46:30 
  * @Last Modified by: jecyu
- * @Last Modified time: 2018-01-14 21:02:54
+ * @Last Modified time: 2018-01-27 10:25:10
  */
 
-@import "../common/utilities/_mixin";
 $basecolor: #172a88;
 $item1: #8fc320;
 $item2: #20c544;
@@ -15,365 +14,365 @@ $item5: #2091c5;
 $item6: #3ec520;
 $fontColor: #5f5f5f;
 @mixin setColorAndHover($baseColor) {
-    // color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 40%);
-    }
+  // color: $baseColor;
+  &:hover {
+    background: lighten($baseColor, 40%);
+  }
 }
 
 @mixin setShadow {
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 .section-main {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .services {
-    padding: 0 0 3.4rem 0;
+  padding: 0 0 3.4rem 0;
 
-    .content {
-        position: relative;
-        padding: 2.7rem 0 3.4rem 0;
+  .content {
+    position: relative;
+    padding: 2.7rem 0 3.4rem 0;
 
-        background: #fff;
-        zoom: 1;
-    }
+    background: #fff;
+    zoom: 1;
+  }
 }
 
 // content
 .doc-detail {
-    .step-list {
-        height: 3rem;
-        margin: 0 0 2rem 0;
+  .step-list {
+    height: 3rem;
+    margin: 0 0 2rem 0;
 
-        .step-item {
-            overflow: hidden;
-            float: left;
+    .step-item {
+      overflow: hidden;
+      float: left;
 
-            max-width: 16.8rem;
-            height: 3rem;
-            line-height: 3rem;
-        }
-
-        .current {
-            b {
-                background: lighten($item4, 48%);
-                color: $item4;
-            }
-
-            span {
-                color: darken($color: $fontColor, $amount:30);
-            }
-        }
-
-        // text
-        span {
-            float: left;
-            // display: inline-block;
-            height: 3rem;
-            line-height: 3rem;
-
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: lighten($fontColor, 20%);
-        }
-
-        // number
-        b {
-            display: inline-block;
-
-            height: 2.5rem;
-            width: 2.5rem;
-            margin: 0.2rem 1rem 0;
-            border-radius: 50%;
-
-            font-size: 1.4rem;
-            font-weight: normal;
-            line-height: 2.5rem;
-            text-align: center;
-            color: $fontColor;
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        // angle-right
-        .fa {
-            margin: 0 2rem;
-            line-height: 3rem;
-            color: lighten($fontColor, 20%);
-        }
+      max-width: 16.8rem;
+      height: 3rem;
+      line-height: 3rem;
     }
 
-    .detail-bd {
-        padding: 3rem 3rem 0 3rem;
-        border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    .current {
+      b {
+        background: lighten($item4, 48%);
+        color: $item4;
+      }
+
+      span {
+        color: darken($color: $fontColor, $amount:30);
+      }
     }
+
+    // text
+    span {
+      float: left;
+      // display: inline-block;
+      height: 3rem;
+      line-height: 3rem;
+
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: lighten($fontColor, 20%);
+    }
+
+    // number
+    b {
+      display: inline-block;
+
+      height: 2.5rem;
+      width: 2.5rem;
+      margin: 0.2rem 1rem 0;
+      border-radius: 50%;
+
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 2.5rem;
+      text-align: center;
+      color: $fontColor;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    // angle-right
+    .fa {
+      margin: 0 2rem;
+      line-height: 3rem;
+      color: lighten($fontColor, 20%);
+    }
+  }
+
+  .detail-bd {
+    padding: 3rem 3rem 0 3rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  }
 }
 
 // file-info-detail
 .file-info-detail {
-    label {
-        float: left;
-        margin: 0;
-        padding: 0;
+  label {
+    float: left;
+    margin: 0;
+    padding: 0;
 
-        font-size: 1.4rem;
-        line-height: 3.8rem;
-        font-weight: normal;
-        color: darken($fontColor, 40%);
-    }
+    font-size: 1.4rem;
+    line-height: 3.8rem;
+    font-weight: normal;
+    color: darken($fontColor, 40%);
+  }
 }
 
 .choose-service {
-    .item-select {
-        position: relative;
-        float: left;
+  .item-select {
+    position: relative;
+    float: left;
 
-        width: 15.2rem;
-        padding: 0 1.6rem;
-        border: 0.1rem solid rgba(0, 0, 0, 0.4);
-        border-radius: 0.4rem;
+    width: 15.2rem;
+    padding: 0 1.6rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.4);
+    border-radius: 0.4rem;
 
-        font-size: 1.4rem;
-        cursor: pointer;
-        color: darken($fontColor, 40%);
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: darken($fontColor, 40%);
 
-        &.from-service {
-            margin-left: 3.2rem;
-        }
-
-        // arrow
-        .fa {
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translate(0, -50%);
-
-            color: lighten($color: $fontColor, $amount: 20);
-        }
+    &.from-service {
+      margin-left: 3.2rem;
     }
 
-    // select input
-    .select {
-        display: none;
-        position: absolute;
-        top: 3.8rem;
-        z-index: 2;
-        overflow: auto;
-        left: -0.1rem;
+    // arrow
+    .fa {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translate(0, -50%);
 
-        width: 15.2rem;
-        max-height: 26rem;
-        margin-left: 0;
-        border-bottom-left-radius: 0.4rem;
-        border-bottom-right-radius: 0.4rem;
-        border: 0.1rem solid rgba(0, 0, 0, 0.4);
-
-        background: #fff;
-
-        li {
-            padding: 1rem 1.6rem 1rem 1.6rem;
-            cursor: pointer;
-        }
+      color: lighten($color: $fontColor, $amount: 20);
     }
+  }
 
-    // selected text
-    .select-text {
-        overflow: hidden;
-        display: block;
+  // select input
+  .select {
+    display: none;
+    position: absolute;
+    top: 3.8rem;
+    z-index: 2;
+    overflow: auto;
+    left: -0.1rem;
 
-        height: 3.8rem;
-        margin-right: 2rem;
-        line-height: 3.8rem;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+    width: 15.2rem;
+    max-height: 26rem;
+    margin-left: 0;
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.4);
+
+    background: #fff;
+
+    li {
+      padding: 1rem 1.6rem 1rem 1.6rem;
+      cursor: pointer;
     }
+  }
 
-    .service-price-link {
-        color: lighten($fontColor, 20%);
-        background: none;
-    }
+  // selected text
+  .select-text {
+    overflow: hidden;
+    display: block;
 
-    .hint {
-        margin-left: 3.2rem;
-        line-height: 3.8rem;
-    }
+    height: 3.8rem;
+    margin-right: 2rem;
+    line-height: 3.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .service-price-link {
+    color: lighten($fontColor, 20%);
+    background: none;
+  }
+
+  .hint {
+    margin-left: 3.2rem;
+    line-height: 3.8rem;
+  }
 }
 
 // file upload
 .fileupload-con {
+  position: relative;
+  left: 0;
+
+  height: 3.4rem;
+  margin-left: 8.8rem;
+  padding-top: 0.4rem;
+
+  font-size: 0;
+  letter-spacing: 0;
+
+  .file-info-btn {
+    z-index: 1;
     position: relative;
+    display: inline-block;
     left: 0;
 
-    height: 3.4rem;
-    margin-left: 8.8rem;
-    padding-top: 0.4rem;
+    width: 10.2rem;
+    height: 3rem;
+    border: 0.1rem solid $item4;
+    border-radius: 0.4rem;
 
-    font-size: 0;
-    letter-spacing: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 3rem;
+    color: #fff;
+    background: $item4;
+    cursor: pointer;
 
-    .file-info-btn {
-        z-index: 1;
-        position: relative;
-        display: inline-block;
-        left: 0;
+    .input-file {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      opacity: 0;
 
-        width: 10.2rem;
-        height: 3rem;
-        border: 0.1rem solid $item4;
-        border-radius: 0.4rem;
+      width: 10.4rem;
+      height: 3.2rem;
+      border-width: 0;
 
-        font-size: 1.4rem;
-        text-align: center;
-        line-height: 3rem;
-        color: #fff;
-        background: $item4;
-        cursor: pointer;
-
-        .input-file {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1;
-            opacity: 0;
-
-            width: 10.4rem;
-            height: 3.2rem;
-            border-width: 0;
-
-            background: #fff;
-            cursor: pointer;
-            box-shadow: none;
-            color: #ccc;
-        }
+      background: #fff;
+      cursor: pointer;
+      box-shadow: none;
+      color: #ccc;
     }
+  }
 }
 
 .more-hint {
-    margin-left: 8.7rem;
-    padding: 1rem 0 0 0;
-    font-size: 1.2rem;
-    color: lighten($fontColor, 20%);
-    line-height: 1.6rem;
+  margin-left: 8.7rem;
+  padding: 1rem 0 0 0;
+  font-size: 1.2rem;
+  color: lighten($fontColor, 20%);
+  line-height: 1.6rem;
 }
 
 /* services-list-con */
 .services-list-con {
-    label {
-        float: left;
+  label {
+    float: left;
+  }
+
+  .service-area {
+    float: left;
+    width: 80%;
+    margin-left: 3rem;
+  }
+
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    thead > tr > th {
+      border-bottom: 0.2rem solid rgba(0, 0, 0, 0.2);
     }
 
-    .service-area {
-        float: left;
-        width: 80%;
-        margin-left: 3rem;
+    th,
+    td {
+      padding: 0.8rem;
     }
 
-    .table {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
+    .service-item {
+      border-bottom: 0.2rem solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
 
-        border-spacing: 0;
-        border-collapse: collapse;
-
-        thead > tr > th {
-            border-bottom: 0.2rem solid rgba(0, 0, 0, 0.2);
-        }
-
-        th,
-        td {
-            padding: 0.8rem;
-        }
-
-        .service-item {
-            border-bottom: 0.2rem solid rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        .cx {
-            width: 20%；;
-        }
-
-        .service-price {
-            width: 40%;
-        }
-
-        .service-name {
-            width: 40%;
-        }
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
     }
+
+    .cx {
+      width: 20%；;
+    }
+
+    .service-price {
+      width: 40%;
+    }
+
+    .service-name {
+      width: 40%;
+    }
+  }
 }
 
 // submit-con
 .submit-con {
-    height: 8rem;
-    margin-left: 8.8rem;
-    padding-bottom: 3rem;
+  height: 8rem;
+  margin-left: 8.8rem;
+  padding-bottom: 3rem;
 
-    .control-btn {
-        float: left;
+  .control-btn {
+    float: left;
 
-        width: 14.2rem;
-        height: 3.8rem;
-        border-radius: 0.4rem;
-        margin-right: 5rem;
+    width: 14.2rem;
+    height: 3.8rem;
+    border-radius: 0.4rem;
+    margin-right: 5rem;
 
-        font-size: 1.4rem;
-        line-height: 3.8rem;
-        text-align: center;
-        color: #fff;
-        background: $item4;
+    font-size: 1.4rem;
+    line-height: 3.8rem;
+    text-align: center;
+    color: #fff;
+    background: $item4;
+  }
+
+  .read-agreement {
+    float: left;
+
+    height: 1.8rem;
+    width: 28.6rem;
+    margin: 0.7rem auto 0 auto;
+
+    // checkbox
+    .already-read-con {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      top: 0.3rem;
+
+      float: left;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 0.2rem;
+
+      &.checked {
+        background: $item4 url(../../image/ico/right.png) no-repeat;
+        border: 1px solid $item4;
+      }
+
+      // checkbox
+      input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
     }
 
-    .read-agreement {
-        float: left;
+    // label
+    label {
+      float: left;
 
-        height: 1.8rem;
-        width: 28.6rem;
-        margin: 0.7rem auto 0 auto;
-
-        // checkbox
-        .already-read-con {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            top: 0.3rem;
-
-            float: left;
-            width: 1.6rem;
-            height: 1.6rem;
-            border-radius: 0.2rem;
-
-            &.checked {
-                background: $item4 url(../../image/ico/right.png) no-repeat;
-                border: 1px solid $item4;
-            }
-
-            // checkbox
-            input {
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
-        }
-
-        // label
-        label {
-            float: left;
-
-            padding-left: 0.3rem;
-            line-height: 2.2rem;
-            vertical-align: 0.2rem;
-        }
+      padding-left: 0.3rem;
+      line-height: 2.2rem;
+      vertical-align: 0.2rem;
     }
+  }
 }

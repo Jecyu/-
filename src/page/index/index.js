@@ -13,27 +13,27 @@ require("page/common/index.js");
 var Swiper = require("util/swiper/swiper.js");
 
 const page = {
-    // 初始化
-    init: function() {
-        this.onLoad();
-    },
-    onLoad: function() {
-        this.bindEvent();
-    },
-    bindEvent: function() {
-        let swiper = new Swiper(".swiper-container", {
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination"
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            }
-        });
-    }
+  // 初始化
+  init: function() {
+    this.onLoad();
+  },
+  onLoad: function() {
+    this.bindEvent();
+  },
+  bindEvent: function() {
+    let swiper = new Swiper(".swiper-container", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination"
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  }
 };
 
 $(document).ready(function() {
-    page.init();
+  page.init();
 });

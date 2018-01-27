@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require('html-loader!./layout/head-common.html')  %>
+</head>
+
+<body>
+    <%= require('html-loader!./layout/nav.html')  %>
+
+        <main class="page-content">
+            <section class="section-introduce">
+                <div class="banner">
+                    <h1 class="banner__title">流程展示
+                    </h1>
+                    <p class="banner__desc">总有一款服务项目适合你
+                        <br>这里将是我们服务项目的流程展示</p>
+                </div>
+            </section>
+            <section class="section-project inner-center">
+                <div class="section-project__header">
+                    <h2 class="section-project__title">数据文本服务</h2>
+                </div>
+                <div class="section-project__content">
+                    <div class="project-wrap">
+                        <div class="project clearfix">
+                            <div class="project__text left-part">
+                                <h3 class="project__title">1上传资料</h3>
+                                <ul class="project__desc-list">
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>doc、docx、txt
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>png、jpg、gif
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>pdf、xls、xlsx
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>rar、zip、pptx
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>. . .
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project__image right-part">
+                                <img src="<%= require('../image/service-show/theme.png')  %>" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-wrap">
+                        <div class="project clearfix">
+                            <div class="project__text right-part">
+                                <h3 class="project__title">2选择服务</h3>
+                                <ul class="project__desc-list">
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>数值数据
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>序列数据
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>表达数据
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>结构数据
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>. . .
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project__image left-part">
+                                <img src="<%= require('../image/service-show/datacollecting.png')  %>" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-wrap">
+                        <div class="project clearfix">
+                            <div class="project__text left-part">
+                                <h3 class="project__title">3确认报价</h3>
+                                <ul class="project__desc-list">
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>项目一：xxx 元
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>项目二：xxx 元
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>项目三：xxx 元
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>项目四：xxx 元
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>. . .
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project__image right-part">
+                                <img src="<%= require('../image/service-show/theme.png')  %>" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-wrap">
+                        <div class="project clearfix">
+                            <div class="project__text right-part">
+                                <h3 class="project__title">4支付订单</h3>
+                                <ul class="project__desc-list">
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-hand-o-right"></i>微信二维码或银行卡转账</li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>订单1
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>订单2
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>订单3
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>订单4
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>. . .
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project__image left-part">
+                                <img src="<%= require('../image/service-show/theme.png')  %>" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-wrap">
+                        <div class="project clearfix">
+                            <div class="project__text right-part">
+                                <h3 class="project__title">5返回处理结果到邮箱</h3>
+                                <ul class="project__desc-list">
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>评价内容分类
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>文本关键词提取
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>文本润修
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>论文标书
+                                    </li>
+                                    <li class="project_desc-item">
+                                        <i class="icon--check fa fa-check-square"></i>. . .
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="project__image left-part">
+                                <img src="<%= require('../image/service-show/theme.png')  %>" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%= require('html-loader!./layout/footer.html')  %>
+            <%= require('html-loader!./layout/foot.html')  %>
+</body>
+
+</html>

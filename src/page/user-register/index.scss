@@ -2,10 +2,9 @@
  * @Author: jecyu 
  * @Date: 2018-01-19 21:17:15 
  * @Last Modified by: jecyu
- * @Last Modified time: 2018-01-21 11:50:12
+ * @Last Modified time: 2018-01-27 10:25:49
  */
 
-@import "../common/utilities/_mixin";
 $basecolor: #172a88;
 $item1: #8fc320;
 $item2: #20c544;
@@ -15,120 +14,121 @@ $item5: #2091c5;
 $item6: #3ec520;
 $fontColor: #5f5f5f;
 @mixin setColorAndHover($baseColor) {
-    // color: $baseColor;
-    &:hover {
-        background: lighten($baseColor, 40%);
-    }
+  // color: $baseColor;
+  &:hover {
+    background: lighten($baseColor, 40%);
+  }
 }
 
 @mixin setShadow {
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 .page-wrap {
-    margin: 5rem auto; // box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
-    .mod-red {
-        position: relative;
-        .reg-content {
-            position: relative;
-        }
+  margin: 5rem auto; // box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+  .mod-red {
+    position: relative;
+    .reg-content {
+      position: relative;
     }
+  }
 }
 
 .pass-reg {
-    // padding-top: 3rem;
-    margin-left: 30rem;
-    .pass-form-item {
-        position: relative;
-        margin-bottom: 2rem;
-    } // label
-    .pass-label {
-        display: block;
-        float: left;
-        height: 4.2rem;
-        width: 6.5rem;
-        margin-right: 1rem;
-        line-height: 4.2rem;
-        font-size: 1.4rem;
-        color: darken($color: $fontColor, $amount: 10);
-        font-weight: 700;
-        text-align: right;
-    } // user input
-    .pass-text-input {
-        display: block;
-        position: relative;
-        float: left;
-        height: 4rem;
-        width: 32.8rem;
-        padding: 1.1rem 1rem;
-        margin-right: 1rem;
-        border: 0.1rem solid #ddd;
-        font-size: 1.4rem;
-        color: $fontColor;
-        transition: 0.3s;
-    } // pass-button
-    .pass-button {
-        display: block;
-        height: 5rem;
-        border: 0;
-        border-radius: 0.3rem;
-        font-size: 1.6rem;
-        font-weight: 700;
-        cursor: pointer;
-        color: #fff;
-        transition: 0.3s;
+  // padding-top: 3rem;
+  margin-left: 30rem;
+  .pass-form-item {
+    position: relative;
+    margin-bottom: 2rem;
+  } // label
+  .pass-label {
+    display: block;
+    float: left;
+    height: 4.2rem;
+    width: 6.5rem;
+    margin-right: 1rem;
+    line-height: 4.2rem;
+    font-size: 1.4rem;
+    color: darken($color: $fontColor, $amount: 10);
+    font-weight: 700;
+    text-align: right;
+  } // user input
+  .pass-text-input {
+    display: block;
+    position: relative;
+    float: left;
+    height: 4rem;
+    width: 32.8rem;
+    padding: 1.1rem 1rem;
+    margin-right: 1rem;
+    border: 0.1rem solid #ddd;
+    font-size: 1.4rem;
+    color: $fontColor;
+    transition: 0.3s;
+  }
+  // pass-button
+  .pass-button {
+    display: block;
+    height: 5rem;
+    border: 0;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+  }
+  // pass-button-verifyCodeSend
+  .pass-button-verifyCodeSend {
+    @extend .pass-button;
+    float: left;
+    width: 16rem;
+    height: 4rem;
+    border-radius: 0;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: $fontColor;
+    background: rgba(78, 78, 78, 0.1);
+    &:focus,
+    &:hover {
+      border-color: 0.1rem solid #ddaadd;
+      background: lighten($fontColor, 53%);
     }
-    // pass-button-verifyCodeSend
-    .pass-button-verifyCodeSend {
-        @extend .pass-button;
-        float: left;
-        width: 16rem;
-        height: 4rem;
-        border-radius: 0;
-        border: 0.1rem solid rgba(0, 0, 0, 0.1);
-        font-weight: 400;
-        font-size: 1.4rem;
-        color: $fontColor;
-        background: rgba(78, 78, 78, 0.1);
-        &:focus,
-        &:hover {
-            border-color: 0.1rem solid #ddaadd;
-            background: lighten($fontColor, 53%);
-        }
-    } // pass-form-item-isAgree
-    .pass-form-item-isAgree {
-        margin-left: 7.5rem;
-        label {
-            margin-left: 0.5rem;
-            font-size: 1.2rem;
-            color: $fontColor;
-        }
-        a {
-            color: $item4;
-        }
-        .pass-checkbox-isAgree {
-            vertical-align: middle;
-        }
+  } // pass-form-item-isAgree
+  .pass-form-item-isAgree {
+    margin-left: 7.5rem;
+    label {
+      margin-left: 0.5rem;
+      font-size: 1.2rem;
+      color: $fontColor;
     }
-    .pass-form-item-submit {
-        position: relative;
-        left: 7.5rem;
-    } // pass-button-submit
-    .pass-button-submit {
-        float: left;
-        width: 35rem;
-        background: $item4;
-        &:hover {
-            background: lighten($item4, 10%);
-        }
-    } // pass-clear-btn
-    .pass-clear-btn {
-        display: block;
-        position: absolute;
-        top: 1.2rem;
-        left: 39.8rem;
-        width: 1.6rem;
-        height: 1.6rem;
-        cursor: pointer;
+    a {
+      color: $item4;
     }
+    .pass-checkbox-isAgree {
+      vertical-align: middle;
+    }
+  }
+  .pass-form-item-submit {
+    position: relative;
+    left: 7.5rem;
+  } // pass-button-submit
+  .pass-button-submit {
+    float: left;
+    width: 35rem;
+    background: $item4;
+    &:hover {
+      background: lighten($item4, 10%);
+    }
+  } // pass-clear-btn
+  .pass-clear-btn {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    left: 39.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+  }
 }
