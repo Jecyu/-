@@ -1,0 +1,91 @@
+/*
+ * @Author: jecyu 
+ * @Date: 2018-01-10 23:22:19 
+ * @Last Modified by: jecyu
+ * @Last Modified time: 2018-01-25 23:23:39
+ */
+
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
+$fontColor: #5f5f5f;
+@mixin setColorAndHover($baseColor) {
+  // color: $baseColor;
+  &:hover {
+      background: lighten($baseColor, 40%);
+  }
+}
+
+@mixin setShadow {
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+// section-introduce
+.section-introduce {
+  position: relative;
+  height: 40rem;
+  width: 100%;
+  background: $item4 url(../../images/bidding-reward/Rewards-image.jpg) no-repeat 100%; // -webkit-backdrop-filter: blur(10);
+  background-size: 100% 100%;
+  .download-btn {
+    margin-top: 10rem;
+  }
+}
+
+.banner-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 2rem;
+  text-align: center;
+  background: rgba($color: #000, $alpha: 0.2);
+  color: #fff;
+  .banner-title {
+    font-size: 3.2rem;
+    font-weight: normal;
+    text-align: ceter;
+  }
+  .banne-desc {
+    max-width: 50rem;
+    margin-top: 2rem;
+    font-size: 2rem; // text-align: justify;
+  }
+}
+
+// tabs
+.tabbar {
+  background: rgba($color: $item4, $alpha: 0.1);
+  background: lighten($color: $fontColor, $amount: 58);
+  text-align: center;
+  .tabs {
+    font-size: 0;
+    li {
+      display: inline-block;
+      width: 33%; // avoid the width only by its content
+      max-width: 22.8rem;
+      padding: 1.8rem 0;
+      font-size: 1.6rem;
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.12;
+      
+      &.active {
+          pointer-events: none;
+          border-bottom: 0.3rem solid $item4;
+          color: $item4;
+          background: #fff;
+      }
+      a {
+        color: inherit;
+      }
+      a[href] {
+          cursor: pointer;
+      }
+    }
+  }
+}

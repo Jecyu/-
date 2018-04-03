@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require('html-loader!./layout/head-common.html')  %>
+        <title>以太生物 | eBio - 广州以太生物有限公司</title>
+</head>
+
+<body>
+  <%= require('html-loader!./layout/nav.html')  %>
+
+  <main>
+    <div class="section-main">
+      <div class="inner-center services">
+        <form action="" class="content">
+          <div class="doc-detail">
+            <div class="detail-hd">
+              <ul class="step-list">
+                <li class="step-item current" data-status="2">
+                  <span>
+                    <b>1</b>提交订单</span>
+                  <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="step-item" data-status="2">
+                  <span>
+                    <b>2</b>确认报价</span>
+                  <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="step-item" data-status="2">
+                  <span>
+                    <b>3</b>支付订单</span>
+                  <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="step-item" data-status="2">
+                  <span>
+                    <b>4</b>服务/审校 </span>
+                  <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="step-item" data-status="2">
+                  <span>
+                    <b>5</b>服务完成</span>
+                  <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="step-item" data-status="2">
+                  <span>
+                    <b>6</b>评价质量</span>
+                </li>
+              </ul>
+            </div>
+            <div class="detail-bd">
+              <ul class="file-info clearfix">
+
+                <li class="file-info-detail choose-service clearfix">
+                  <label for="srcService">选择服务</label>
+                  <div class="item-select flog-js from-service">
+                    <span class="select-text">数据服务
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                    <ul class="select clearfix" id="src_service">
+                      <li class="default" data-value="">数据服务</li>
+                      <li class="default" data-value="">文本服务</li>
+                    </ul>
+                  </div>
+                  <input class="select-input" id="srcService" type="hidden" value="zh">
+                  <a class="hint service-price-link" href="###" target="_blank">查看服务价格</a>
+                </li>
+
+                <li class="file-info-detail docupload clearfix">
+                  <label for="fileInfo">服务内容</label>
+                  <div class="fileupload-con">
+                    <a id="fileInfoBtn" href="javascript:;" class="file-info-btn">
+                      <input id="fileInfo" class="input-file" value="浏览" type="file" data-act="select-file" name="fileInfo"> 上传文档
+                    </a>
+                  </div>
+                  <div class="more-hint">
+                    <p>
+                      请上传doc、docx、txt pdf xls xlsx pdf pptx rar zip png jpg gif格式的文件，文件大小在100M以内。
+                      <br> (注：提交 word/txt文档可选自助提交，效率更高)
+                    </p>
+                  </div>
+                </li>
+
+                <li class="services-list-con clearfix">
+                  <label>服务项目</label>
+                  <div class="service-area">
+                    <table class="table tabel-services">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>服务项目</th>
+                          <th>价格</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="service-item">
+                          <td class="cx">
+                            <input type="checkbox">
+                          </td>
+                          <td class="service-name">
+                            数值数据
+                          </td>
+                          <td class="service-price">
+                            <span>xxx元</span>
+                          </td>
+                        </tr>
+                        <tr class="service-item">
+                          <td class="cx">
+                            <input type="checkbox">
+                          </td>
+                          <td class="service-name">
+                            序列数据
+                          </td>
+                          <td class="service-price">
+                            <span>xxx元</span>
+                          </td>
+                        </tr>
+                        <tr class="service-item">
+                          <td class="cx">
+                            <input type="checkbox">
+                          </td>
+                          <td class="service-name">
+                            结构数据
+                          </td>
+                          <td class="service-price">
+                            <span>xxx元</span>
+                          </td>
+                        </tr>
+                        <tr class="service-item">
+                          <td class="cx">
+                            <input type="checkbox">
+                          </td>
+                          <td class="service-name">
+                            模型数据
+                          </td>
+                          <td class="service-price">
+                            <span>xxx元</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </li>
+
+                <li class="submit-con clearfix">
+                  <a id="goToConfirmServices" class="control-btn" href="javascript:void(0)" rel="nofollow">提交服务</a>
+                  <div class="read-agreement  clearfix">
+                    <div class="already-read-con checked">
+                      <input id="alreadyRead" type="checkbox" checked>
+                    </div>
+                    <label for="alreadRead">我已阅读并同意
+                      <a href="###" target="_blank" rel="nofollow ">《以太生物服务条款》</a>
+                    </label>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <%= require('html-loader!./layout/footer.html')  %>
+  <%= require('html-loader!./layout/foot.html')  %>
+</body>
+
+</html>
