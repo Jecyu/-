@@ -8,14 +8,20 @@ const path = require('path');
 
 // 添加 webpack-dev-server 相关的配置
 config.devServer = {
-  // contentBase: path.join(__dirname, '../dist'), // 本地服务器所加载的页面所在的目录
   contentBase: './', // 本地服务器所加载的页面所在的目录
+  port: 8088,
   inline: true,
   // publicPath: '/assets/'
-  publicPath: '/dist/' // 这里必须是 /dist/，对应 path，devServer 才能访问内存
+  publicPath: '/dist/' // 这里必须是 /dist/，对应打包路径 path，devServer 才能访问记忆内存
+  // proxy: {
+  //   '**': {
+  //     target: 'http://localhost:5000',
+  //     secure: false,
+  //     changeOrigin: true
+  //   }
+  // }
 };
 
-// TODO devServer.proxy
 
 config.module.rules.push({
   test: /\.scss$/,
@@ -52,7 +58,7 @@ Object.keys(config.entry).forEach((key) => {
   // 这里有一个私有的约定，如果 entry 是一个数组，则证明它需要被 hot module replace
   if (Array.isArray(config.entry[key])) {
     config.entry[key].unshift(
-      'webpack-dev-server/client?http://0.0.0.0:8080',
+      'webpack-dev-server/client?http://0.0.0.0:8088',
       'webpack/hot/only-dev-server'
     );
   }

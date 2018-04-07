@@ -10,15 +10,15 @@ const Hogan = require('hogan.js');
 
 const conf = {
   // 因为接口地址和当前的静态文件地址是一样的，所以直接用空
-  serverHost: '',
+  serverHost: 'http://mock.eolinker.com/cf6IZykb556226864ab04e4e65fc27205f38da162a310f6?uri=www.eoLinker.com/api'
 };
 
-const mq = {
+const ebio = {
   /**
    * 网络请求
-   * @param {Object} params 可以是对象、函数
+   * @param {Object} params 请求对象
    */
-  request: (params) => {
+  request(params) {
     const _this = this;
     $.ajax({
       type: params.method || 'get',
@@ -26,20 +26,18 @@ const mq = {
       dataType: params.type || 'json',
       data: params.data || '',
       success: (res) => {
-        // console.log(res.data);
         // 请求成功
-        // if (200 === res.status) {
-        // success为函数，则进行回调传过去
-        typeof params.success === 'function' && params.success(res.data, res.msg);
-        // }
-        // // 请求数据错误
-        // else if (1 === res.status) {
-        //     typeof params.error === 'function' && params.error(res.msg);
-        // }
+        if (res.status === 0) {
+          console.log(res);
+          // success为函数，则进行回调传过去
+          typeof params.success === 'function' && params.success(res.data, res.msg);
+        } else if (res.status === 1) { // 请求数据错误
+          typeof params.error === 'function' && params.error(res.msg);
+        }
       },
       error: (err) => {
         typeof params.error === 'function' && params.error(err.statusText);
-      },
+      }
     });
   },
   /**
@@ -47,15 +45,15 @@ const mq = {
    * @param {string} path 服务器路径
    * @return  {string} 返回服务器地址
    */
-  getServerUrl: (path) => {
-    return conf.serverHost + path
+  getServerUrl(path) {
+    return conf.serverHost + path;
   },
   /**
    * 获取URL参数
    * @param {string} name 要查询的键keyword
    * @return  返回对应键的值value
    */
-  getUrlParam: (name) => {
+  getUrlParam(name) {
     // miniQ.com/questionnaire/list?keyword=xxx&page=1
     const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`);
     const result = window.location.search.substring(1).match(reg);
@@ -67,44 +65,26 @@ const mq = {
    * @param {Object} data 一个数据对象
    * @return 返回渲染后的html片段
    */
-  renderHtml: (htmlTemplate, data) => {
+  renderHtml(htmlTemplate, data) {
     // 编译
     const compiledTemplate = Hogan.compile(htmlTemplate);
     // 渲染
     const result = compiledTemplate.render(data);
     return result;
   },
+  successTips(msg) {
+    alert(msg || '操作成功');
+  },
+  // 错误提示
+  errorTips(msg) {
+    alert(msg || '哪里不对了~');
+  },
   /**
    * 回到首页
    */
-  goHome: () => {
+  goHome() {
     window.location.href = './index.html';
-  },
-  /**
-   * feature-detecting localStorage
-   */
-  storageAvailable: (type) => {
-    const storage = window[type];
-    try {
-      const x = '__storage_test__';
-      storage.setItem(x, x);
-      storage.removeItem(x);
-      return true;
-    } catch (e) {
-      return e instanceof DOMException && (
-        // everything except Firefox
-        e.code === 22 ||
-          // Firefox
-          e.code === 1014 ||
-          // test name field too, because code might not be present
-          // everything except Firefox
-          e.name === 'QuotaExceededError' ||
-          // Firefox
-          e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-          // acknowledge QuotaExceededError only if there's something already stored
-          storage.length !== 0;
-    }
-  },
+  }
 };
 
-module.exports = mq;
+module.exports = ebio;

@@ -1,0 +1,23 @@
+/*
+ * File Created: Thursday, 5th April 2018 11:46:52 pm
+ * Author: <<Jecyu>> (<<jecyulin@foxmail.com>>)
+ * -----
+ * Last Modified: Friday, 6th April 2018 11:55:53 am
+ * Modified By: <<Jecyu>> (<<jecyulin@foxmail.com>>>)
+ */
+
+.result-section {
+  display: none;
+  text-align: center;
+  &__title {
+    overflow: hidden;
+    margin: 4rem 0;
+  }
+  &__content {
+    margin-bottom: 3rem;
+  }
+  .result__btn {
+    margin: 0 1rem;
+    color: hsl(0, 0%, 18%);
+  }
+}

@@ -40,7 +40,14 @@ const ASSETS_PUBLIC_PATH = '../';
 module.exports = {
   context: SRC_PATH, // 设置源代码的默认根路径
   resolve: {
-    extensions: ['.js', '.jsx'] // 同时支持 js 和 jsx
+    extensions: ['.js', '.jsx'], // 同时支持 js 和 jsx
+    alias: {
+      node_modules: `${__dirname}../node_modules`,
+      util: `${SRC_PATH}/util`,
+      images: `${SRC_PATH}/images`,
+      page: `${SRC_PATH}/page`,
+      service: `${SRC_PATH}/service`
+    }
   },
   entry: {
     // 注意 entry 中的路径都是相对于 SRC_PATH 的路径
@@ -55,7 +62,8 @@ module.exports = {
     process_show: ['./page/process-show/index.js'],
     user_register: ['./page/user-register/index.js'],
     user_pass_reset: ['./page/user-pass-reset/index.js'],
-    bidding_reward: ['./page/bidding-reward/index.js']
+    bidding_reward: ['./page/bidding-reward/index.js'],
+    result: ['./page/result/index.js']
   },
   output: {
     path: ASSETS_BUILD_PATH, // 打包后输出文件放置的地方
@@ -155,7 +163,8 @@ module.exports = {
     new HtmlWebpackPlugin(getHtmlConfig('process_show', '流程展示')),
     new HtmlWebpackPlugin(getHtmlConfig('user_register', '注册以太生物帐号')),
     new HtmlWebpackPlugin(getHtmlConfig('user_pass_reset', '找回密码')),
-    new HtmlWebpackPlugin(getHtmlConfig('bidding_reward', '招标悬赏'))
+    new HtmlWebpackPlugin(getHtmlConfig('bidding_reward', '招标悬赏')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
   ]
 };
 

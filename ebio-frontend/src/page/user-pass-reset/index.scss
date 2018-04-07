@@ -31,7 +31,7 @@ $error: #da1111;
   height: 4.2rem;
   background: lighten($color: $fontColor, $amount: 60);
   box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
-  .mod-nav__title {
+  &__title {
     height: 4rem;
     width: 120rem;
     padding-left: 7rem;
@@ -111,13 +111,22 @@ $error: #da1111;
 
 // forgot-step detail
 .mod-forgot__step {
+  display: none;
   margin-left: 7rem;
   margin-bottom: 10rem;
+  
   a {
     color: $item4;
   }
   .mod-form__item {
     // margin-bottom: 2rem;
+    .mod-forgot__label {
+      float: left;
+      width: 8rem;
+      padding-right: 1rem;
+      line-height: 4.2rem;
+      text-align: right;
+    }
     .mod-forgot__input {
       display: block;
       float: left;

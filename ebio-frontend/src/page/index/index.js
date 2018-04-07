@@ -6,7 +6,6 @@
  */
 // localstorage
 
-
 require('./index.scss');
 require('../../page/common/index.js');
 const Swiper = require('../../components/swiper/swiper.js');

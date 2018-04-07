@@ -7,51 +7,54 @@
 
 <body>
   <header>
-    <%= require('html-loader!./layout/nav-sample.html')  %>
+    <%= require('html-loader!./layout/nav_sample.html')  %>
   </header>
   <div class="page-wrap inner-center">
     <div class="mod-reg">
       <div class="pass-reg reg-content">
         <form action="" autocomplete="off">
+          <p class="error-item">
+            <span class="error-msg"></span>
+          </p>
           <p class="pass-form-item pass-form-item-username clearfix">
             <label for="inpt-account" class="pass-label pass-label-username">用户名</label>
-            <input id="inpt-account" type="text" class="pass-text-input pass-text-input-username" placeholder="请设置用户名">
+            <input id="inpt-account" type="text" class="pass-text-input pass-text-input-username required" placeholder="中英文均可，最长14个英文或7个汉字">
             <span class="pass-clearbtn pass-clearbtn-username"></span>
-            <span class="pass-item-error pass-item-error-username"></span>
-          </p>
-          <p class="pass-form-item pass-form-item-phone clearfix">
-            <label for="inpt-phone" class="pass-label pass-label-phone">手机号</label>
-            <input id="inpt-phone" type="text" class="pass-text-input pass-text-input-phone" placeholder="可用于登录和密码找回">
-            <span class="pass-clearbtn pass-clearbtn-phone"></span>
-            <span class="pass-item-error pass-item-error-phone"></span>
           </p>
           <p class="pass-form-item pass-form-item-password clearfix">
-            <label for="inpt-pw" class="pass-label pass-label-password">密码</label>
-            <input id="inpt-pw" type="text" class="pass-text-input pass-text-input-password" placeholder="6到16位密码，区分大小写">
+            <label for="inpt-pwd" class="pass-label pass-label-password">密码</label>
+            <input id="inpt-pwd" type="password" class="pass-text-input pass-text-input-password required" placeholder="6到16位密码，区分大小写">
             <span class="pass-clearbtn pass-clearbtn-password"></span>
-            <span class="pass-item-error pass-item-error-password"></span>
           </p>
           <p class="pass-form-item pass-form-item-confirmPassword clearfix">
             <label for="inpt-pwd2" class="pass-label pass-label-confirmpassword">确认密码</label>
-            <input id="inpt-pwd2" type="text" class="pass-text-input pass-text-input-confirmpassword" placeholder="再次输入密码">
+            <input id="inpt-pwd2" type="password" class="pass-text-input pass-text-input-confirmpassword required" placeholder="再次输入密码">
             <span class="pass-clearbtn pass-clearbtn-confirmpassword"></span>
-            <span class="pass-item-error pass-item-error-confirmpassword"></span>
           </p>
-          <p class="pass-form-item pass-form-item-verifyCodeSend clearfix">
+          <p class="pass-form-item pass-form-item-phone clearfix">
+            <label for="inpt-phone" class="pass-label pass-label-phone">手机号</label>
+            <input id="inpt-phone" type="text" class="pass-text-input pass-text-input-phone required" placeholder="可用于登录和密码找回">
+            <span class="pass-clearbtn pass-clearbtn-phone"></span>
+            <span class="pass-item-error pass-item-error-phone"></span>
+          </p>
+          <p class="pass-form-item pass-form-item-phone clearfix">
+            <label for="inpt-email" class="pass-label pass-label-email">邮箱号</label>
+            <input id="inpt-email" type="email" class="pass-text-input pass-text-input-email required" placeholder="可用于接收文档">
+            <span class="pass-clearbtn pass-clearbtn-email"></span>
+          </p>
+          <!-- <p class="pass-form-item pass-form-item-verifyCodeSend clearfix">
             <label for="inpt-vcode" class="pass-label pass-label-verifycode">验证码</label>
             <input id="inpt-vcode" type="text" class="pass-text-input pass-text-input-verifycode" placeholder="请输入验证码">
             <span class="pass-clearbtn pass-clearbtn-verifycode"></span>
             <input type="button" class="pass-button pass-button-verifyCodeSend" autocomplete="off" value="获取短信验证码">
-          </p>
+          </p> -->
           <p class="pass-form-item pass-form-item-isAgree clearfix">
-            <input id="check-isAgree" name="isAgree" type="checkbox" class="pass-checkbox-isAgree pass-text-input-error">
+            <input id="check-isAgree" name="isAgree" type="checkbox" class="pass-checkbox-isAgree pass-text-input-error" checked="checked">
             <label for="check-isAgree">阅读并接受</label>
             <a target="_blank" href="###">《以太生物用户协议》</a>
           </p>
           <p class="pass-form-item pass-form-item-submit clearfix">
-            <a href="">
-              <input type="submit" value="注册" class="pass-button pass-button-submit">
-            </a>
+            <input id="send" type="button" value="注册" class="pass-button pass-button-submit">
           </p>
         </form>
       </div>

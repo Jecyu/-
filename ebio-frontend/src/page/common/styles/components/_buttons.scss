@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  // border-radius: 4px;
+  border: 1px solid transparent;
+
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  user-select: none;
+  color: #fff !important;
+  background: hsl(174, 61%, 44%);
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #fff;
+  background: hsl(174, 70%, 54%);
+  text-decoration: none;
+}

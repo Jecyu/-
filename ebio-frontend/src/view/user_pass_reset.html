@@ -7,7 +7,7 @@
 
 <body>
   <header>
-    <%= require('html-loader!./layout/nav-simple-2.html')  %>
+    <%= require('html-loader!./layout/nav.html')  %>
   </header>
 
   <main>
@@ -17,11 +17,11 @@
       </div>
       <div class="mod-body inner-center">
         <ul class="mod-forgot__nav clearfix">
-          <li class="mod-forgot__item mod-forgot__item--is-actived">
+          <li class="mod-forgot__item">
             <h3 class="mod-item__title">
             <span class="mod-forgot__order">1</span>确认帐号</h3>
           </li>
-          <li class="mod-forgot__item">
+          <li class="mod-forgot__item ">
             <h3 class="mod-item__title">
             <span class="mod-forgot__order">2</span>安全验证</h3>
           </li>
@@ -30,23 +30,63 @@
             <span class="mod-forgot__order">3</span>重置密码</h3>
           </li>
         </ul>
-        <div class="mod-forgot__step">
-          <form class="mod-form" action="/?getpassindex" method="post">
-            <div class="mod-form__item clearfix">
-              <input class="mod-forgot__input mod-forgot__input--is-error" type="text" placeholder="请你输入用户名/邮箱/手机">
-              <!-- <label class="mod-forgot__label" for="">请您输入用户名/邮箱/手机</label> -->
-              <span class="mod-forgot__tip">请您输入用户名/邮箱/手机</span>
-            </div>
-            <div class="mod-form__item clearfix">
-              <input class="mod-forgot__input  mod-forgot__input-vscode" type="text" placeholder="请你输入验证码">
-              <!-- <label class="mod-forgot__label" for="">请您输入验证码</label> -->
-              <img class="mod-forgot__img-vscode" src=".." alt="验证码图片">
-              <a class="mod-forgot__img-change" href="###">换一张</a>
-            </div>
-            <div class="mod-form__item">
-              <input class="mod-forgot__btn-submit " type="submit" value="下一步">
-            </div>
-          </form>
+        <div class="mod-forgot__content">
+          <!-- Start=第一步：确认帐号 -->
+          <div class="mod-forgot__step">
+            <form class="mod-form">
+              <div class="mod-form__item clearfix">
+                <input id="mod-forgot-account" class="mod-forgot__input" type="text" placeholder="请你输入用户名/邮箱/手机">
+                <!-- <label class="mod-forgot__label" for="">请您输入用户名/邮箱/手机</label> -->
+                <!-- <span class="mod-forgot__tip">请您输入用户名/邮箱/手机</span> -->
+              </div>
+              <!-- <div class="mod-form__item clearfix">
+                <input class="mod-forgot__input  mod-forgot__input-vscode" type="text" placeholder="请你输入验证码">
+                <label class="mod-forgot__label" for="">请您输入验证码</label>
+                <img class="mod-forgot__img-vscode" src=".." alt="验证码图片">
+                <a class="mod-forgot__img-change" href="###">换一张</a>
+              </div> -->
+              <div class="mod-form__item">
+                <input id="submit-account" class="mod-forgot__btn-submit " type="submit"  value="下一步">
+              </div>
+            </form>
+          </div>
+          <!-- End=第一步：确认帐号 -->
+
+          <!-- Start=第二步：安全验证 -->
+          <div class="mod-forgot__step">
+              <form class="mod-form">
+                <div class="mod-form__item clearfix">
+                  <label class="mod-forgot__label" for="">手机号</label>
+                  <input id="#forgot-inpt-phone" class="mod-forgot__input js-inpt-phone" type="text" placeholder="请你输入手机号">
+                </div>
+                <div class="mod-form__item clearfix">
+                  <label class="mod-forgot__label" for="">验证码</label>
+                  <input id="forgot-inpt-vscode" class="mod-forgot__input  mod-forgot__input-vscode" type="text" placeholder="请你输入验证码">
+                  <a id="submit-vscode" href="###">点击发送验证码</a>
+                </div>
+                <div class="mod-form__item">
+                  <input id="submit-verifycode" class="mod-forgot__btn-submit " type="submit" value="下一步">
+                </div>
+              </form>
+          </div>
+          <!-- End=第二步：安全验证 -->          
+          <!-- Start=第三步：重置密码 -->
+          <div class="mod-forgot__step">
+            <form class="mod-form">
+              <div class="mod-form__item clearfix">
+                <label class="mod-forgot__label" for="">新密码</label>                
+                <input id="forgot-inpt-pwd" class="mod-forgot__input" type="password" placeholder="请你输入新密码">
+              </div>
+              <!-- <div class="mod-form__item clearfix">
+                <label class="mod-forgot__label" for="">确认新密码</label>
+                <input id="forgot-inpt-pwd2" class="mod-forgot__input" type="text" placeholder="请你确认新密码">
+              </div> -->
+              <div class="mod-form__item">
+                <input id="submit-reset-password" class="mod-forgot__btn-submit " type="submit" value="确定">
+              </div>
+            </form>
+          </div>
+          <!-- End=第三步：重置密码 -->          
         </div>
       </div>
     </div>

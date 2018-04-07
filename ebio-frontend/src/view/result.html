@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%= require('html-loader!./layout/head-common.html')  %>
+</head>
+
+<body>
+  <header>
+    <%= require('html-loader!./layout/nav_sample2.html')  %>
+  </header>
+
+  <div class="page-wrap inner-center">
+      <div class="result-section register-success">
+        <h1 class="result-section__title">恭喜你，注册成功！</h1>
+        <div class="result-section__content">
+            <a href="./index.html" class="btn result__btn">回到首页</a>
+            <a class="btn result__btn js-login">立即登录</a>
+        </div>
+      </div>
+      <!-- Start=重置密码成功 -->
+      <div class="result-section pass-reset-success">
+        <h1 class="result-section__title">恭喜你，重置密码成功！</h1>
+        <div class="result-section__content">
+            <a href="./index.html" class="btn result__btn">回到首页</a>
+            <a class="btn result__btn js-login">立即登录</a>
+        </div>
+      </div>
+      <!-- End=重置密码成功 -->      
+  </div>
+
+  <%= require('html-loader!./layout/footer.html')  %>
+  <%= require('html-loader!./layout/foot.html')  %>
+
+</body>
+
+</html>
