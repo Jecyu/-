@@ -1,57 +1,41 @@
 {{#notEmpty}}
-<thead class="quest-head">
-    <tr>
-        <th class="quest-cell cell-select">&nbsp;</th>
-        <th class="quest-cell cell-title">标题</th>
-        <th class="quest-cell cell-date">时间</th>
-        <th class="quest-cell cell-status">状态</th>
-        <th class="quest-cell cell-opera">操作</th>
-        <th class="quest-cell cell-create"><span class="create-btn"><i class="fa fa-plus"></i>新建问卷</span></th>
-    </tr>
-</thead>
-<tbody class="quest-body">
-{{#questionnaireList}}
-    <tr class="quest-item" data-quest-id="{{id}}">
-        <td class="quest-cell cell-check">
-            <label class="quest-label">
-                <input type="checkbox" class="quest-select"></input>
-            </label>
-        </td>
-        <td class="quest-cell">{{title}}</td>
-        <td class="quest-cell">{{releaseDateText}}</td>
-        {{#isRelease}}
-        <td class="quest-cell release">{{stateText}}</td>
-        <td class="quest-cell cell-oprea" colspan="2">
-                <a class="opera-btn" href="./questionnaire-datail.html?questionnaireId={{questionnaireId}}">查看问卷</a>            
-                <a class="opera-btn" href="./questionnaire-datail.html?questionnaireId={{questionnaireId}}">查看数据</a>
-        </td>                
-        {{/isRelease}}
-        {{^isRelease}}
-        <td class="quest-cell">{{stateText}}</td>
-        <td class="quest-cell cell-oprea" colspan="2">
-                <a class="opera-btn" href="./questionnaire-datail.html?questionnaireId={{questionnaireId}}">编辑</a>
-                <a class="opera-btn" href="./questionnaire-datail.html?questionnaireId={{questionnaireId}}">删除</a>
-                <a class="opera-btn" href="./questionnaire-datail.html?questionnaireId={{questionnaireId}}">查看问卷</a>
-        </td>
-        {{/isRelease}}
-    </tr>
-{{/questionnaireList}}
-</tbody>
-<tfoot class="quest-footer">
-    <tr>
-        <td class="quest-cell cell-check">
-            <label>
-                <input type="checkbox" id="selectAll" class="quest-select-all"></input>
-            </label>
-        </td>
-        <td class="quest-cell" colspan="5"><label for="selectAll">全选</label><span class="opera-btn">删除</span></td>
-    </tr>
-</tfoot>
-{{/notEmpty}}
-{{^notEmpty}}
-    <div class="create-container">
-        <span class="create-btn large">
-            <i class="fa fa-plus"></i>新建问卷
-        </span>
+<div class="inner-center">
+  <article>
+    <header class="client-header">
+      <h2 class="client-title">客户心声摘录</h2>
+      <p class="client-sub-title">累计服务客户超过50万，用户满意度高达99%</p>
+      <div class="client-tags-con">
+        <ul class="tag-list">
+          <li>挺专业的</li>
+          <li>超快</li>
+          <li>有保障</li>
+          <li>朋友推荐的</li>
+          <li>信赖有道</li>
+          <li>客户声音好听</li>
+        </ul>
+      </div>
+    </header>
+    <div class="client-thinking-list">
+
+      {{#thinkList}}
+        <div class="row">
+          <div class="thinking-item">
+            <p class="thinking"> 文章经以太生物润色后已经在SCI刊物发表，并将以太生物网站推荐给同事，今后有需要还找以太生物网站！</p>
+            <div class="client-info-con">
+              <div class="client-profile">
+                <img src="http://shared.ydstatic.com/at/2.0.6dh/styles/indexb/zhu.png" alt="">
+              </div>
+              <div class="client-info">
+                <p class="client-name">朱小姐/科研工作者</p>
+                <p class="order-info">2760字，发表级别，论文，2天交稿</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{#thinkList}}
+      
     </div>
+
+  </article>
+</div>
 {{/notEmpty}}

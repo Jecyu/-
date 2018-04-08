@@ -29,6 +29,21 @@ const page = {
         prevEl: '.swiper-button-prev'
       }
     });
+
+    /* =============== 为当前所有的服务项目建立链接 ================= */ 
+    // 取得服务项目容器
+    const $cards = $('.card-list .card');
+    // 监听点击事件
+    $cards.each(function bandleClick() {
+      // 取得当前服务项目的 key 值
+      const keyfrom = $(this).attr('data-key');
+      $(this).click(() => {
+        window.location.href = `./service_intro.html?keyfrom=${keyfrom}`;
+      });
+    });
+  },
+  loadClientWord() {
+
   }
 };
 

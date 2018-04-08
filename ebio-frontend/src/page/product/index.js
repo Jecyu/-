@@ -23,24 +23,26 @@ const page = {
   },
   bindEvent() {
     const $root = $('html, body');
-    // meun 滚动
-    $('a[href^="#"]').each(() => {
-      $(this).bind('click', () => {
-        // 获得要滚动的目标值
-        const target = $(this).attr('href');
-        // console.log($(target).offset().top);
+    // 去得当前二级导航的所有链接
+    const $sub_navs = $('.product-nav a[href^="#"]');
+    /* ======================= Section 滚动动画 ======================== */
+    $sub_navs.each(function bandleClick() {
+      $(this).click(() => {
+        // 获得要滚动的目标id
+        const target_id = $(this).attr('href').substring(1);
+        // 获得要滚动的 section
+        const target_section = $(`div[id="${target_id}"]`);
         // 单击链接滚动到对应的部分
         $root.animate(
           {
-            scrollTop: $(target).offset().top - 100
+            scrollTop: $(target_section).offset().top - 100
           }, // 减去导航栏的高度
           1000,
           'swing',
         );
-        return false;
       });
     });
-    // 页面滚动动画
+    /* ======================= 产品导航条检测动画 ======================== */
     $(window).scroll((event) => {
       // 如果滚动到导航栏
       if ($(document).scrollTop() > 590) {
@@ -50,6 +52,7 @@ const page = {
         $('.product-nav').attr('class', 'product-nav');
       }
 
+      /* ======================= 产品导航下划线滚动动画 ======================== */
       // 获取页面所有的部分
       const sections = $('.zui-section');
       for (let i = 0, len = sections.length; i < len; i += 1) {
@@ -59,20 +62,23 @@ const page = {
         // 获取指定部分的页面位置
         // 位置为离它的最近position不为static祖先元素距离;
         const sectionH = section.offset().top;
-        // console.clear();
-        // console.log("winH: " + winH);
-        // console.log("sectionH: " + sectionH);
+        // 当前的 section id
+        const section_id = section.attr('id');
 
         // 取得当前 sectionH 比 winH 大的部分，其他小的不进行处理
         if (sectionH > winH) {
-          const targetNav = $(`a[href="# + ${section.attr('id')}"]`);
+          const query_selector = `a[href="#${section_id}"]`;
+          // 目标导航链接
+          const $targetNav = $(query_selector);
+          const targetNav_x = $targetNav.offset().left;
+          const targetNav_width = $targetNav.width();
           // 激活
           $('a[href^="#"]').attr('class', 'nav');
-          targetNav.attr('class', 'nav current');
+          $targetNav.attr('class', 'nav current');
           // 滚动下划线
           $('.product-nav  i').css(
             'left',
-            (targetNav.offset().left + (targetNav.width() / 2)) - 20,
+            (targetNav_x + (targetNav_width / 2)) - 20,
           );
           // 进入下一次循环
           break;
