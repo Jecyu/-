@@ -5,9 +5,9 @@
  * @Last Modified time: 2018-01-22 22:44:00
  */
 
+import FloatLayer from '../../../components/FloatLayer/float_layer';
+import './index.scss';
 
-require('./index.scss');
-const FloatLayer = require('../../../components/FloatLayer/float_layer');
 const _ebio = require('../../../util/ebio');
 const _user = require('../../../service/user_service');
 

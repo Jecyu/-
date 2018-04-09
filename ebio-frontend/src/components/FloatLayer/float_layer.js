@@ -137,5 +137,5 @@ const FloatLayer = class FloatLayer {
   }
 };
 
-module.exports = FloatLayer;
+export default FloatLayer;
 
