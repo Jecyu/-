@@ -10,7 +10,8 @@ const Hogan = require('hogan.js');
 
 const conf = {
   // 因为接口地址和当前的静态文件地址是一样的，所以直接用空
-  serverHost: 'http://mock.eolinker.com/cf6IZykb556226864ab04e4e65fc27205f38da162a310f6?uri=www.eoLinker.com/api'
+  // serverHost: 'http://mock.eolinker.com/cf6IZykb556226864ab04e4e65fc27205f38da162a310f6?uri=www.eoLinker.com/api'
+  serverHost: 'http://localhost:3000'
 };
 
 const ebio = {
@@ -25,6 +26,14 @@ const ebio = {
       url: params.url || '',
       dataType: params.type || 'json',
       data: params.data || '',
+      // beforeSend(xhr) {
+      //   // const xhr_object = xhr;
+      //   xhr.withCredentials = true; // 跨域必须设置，否则不能保存 cookie 或 会话
+      // },
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
       success: (res) => {
         // 请求成功
         if (res.status === 0) {
@@ -36,6 +45,7 @@ const ebio = {
         }
       },
       error: (err) => {
+        console.log(err);
         typeof params.error === 'function' && params.error(err.statusText);
       }
     });

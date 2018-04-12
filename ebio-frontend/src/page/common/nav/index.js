@@ -16,7 +16,7 @@ const page = {
     this.bindEvent();
   },
   onLoad() {
-    // this.loadUserInfo();
+    this.loadUserInfo();
   },
   bindEvent() {
     // 实现下拉菜单

@@ -82,10 +82,11 @@ const page = {
     }
     // 提交
     _user.login(formData, (res) => {
-      // 重定向到原来的入口页面
+      $('.pass-form__errorWrapper').hide();
+      // 重定向到原来的入口页面（也可通过后端实现）
       window.location.href = _ebio.getUrlParam('redirect') || './index.html';
     }, (errMsg) => {
-      $('.error-item').show().find('.err-msg').text(errMsg);
+      $('.pass-form__errorWrapper').show().find('.pass-form__error').text(errMsg);
     });
     return true;
   },

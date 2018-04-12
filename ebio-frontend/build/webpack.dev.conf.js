@@ -13,9 +13,11 @@ config.devServer = {
   inline: true,
   // publicPath: '/assets/'
   publicPath: '/dist/' // 这里必须是 /dist/，对应打包路径 path，devServer 才能访问记忆内存
+  // headers: { 'Access-Contro-Allow-Origin': '*' },
+  // // 可用
   // proxy: {
-  //   '**': {
-  //     target: 'http://localhost:5000',
+  //   '/users/': {
+  //     target: 'http://[::1]:3000',
   //     secure: false,
   //     changeOrigin: true
   //   }

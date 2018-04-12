@@ -34,13 +34,15 @@ const page = {
       $parent.find('.pass-item-tips').remove();
       // 表单字段的验证
       _this.formValidate($(this), $parent);
+    });
 
-      // 提交表单
-      $('#send').click((event) => {
-        // 防止冒泡，出现多次请求 bug
-        event.stopPropagation();
-        _this.submit();
-      });
+    /* ==== 提交表单 ==== */
+    $('#submit-register').click((event) => {
+      // 防止冒泡，出现多次请求 bug
+      event.preventDefault();
+      event.stopPropagation();
+      _this.submit();
+      return false;
     });
 
     // 如果按下回车，也进行提交
@@ -58,8 +60,8 @@ const page = {
     const _this = this;
     const formData = {
       username: $.trim($('#inpt-account').val()),
-      password: $.trim($('#inpt-pw').val()),
-      passwordConfirm: $.trim($('#inpt-pw2').val()),
+      password: $.trim($('#inpt-pwd').val()),
+      passwordConfirm: $.trim($('#inpt-pwd2').val()),
       phone: $.trim($('#inpt-phone').val()),
       email: $.trim($('#inpt-email').val())
     };
@@ -71,8 +73,7 @@ const page = {
     // error 元素的长度
     const num_error = $('form .isError').length;
     if (num_error) {
-      // 阻止表单提交
-      return false;
+      // TODO 阻止表单提交, 需要禁用 按钮点击
     }
     // 提交
     _user.register(formData, (res) => {
@@ -102,9 +103,8 @@ const page = {
         const error_msg = '中英文均可，最长14个英文或7个汉字';
         formContainer.append(`<span class='pass-item-tips isError'>${error_msg}</span>`);
       } else {
+        /* === 异步验证用户名是否存在 === */
         const ok_msg = '该用户名可用';
-
-        // 异步验证用户名是否存在
         _user.checkUsername(field_value, (res) => {
           formContainer.append(`<span class='pass-item-tips isSuccess'>${ok_msg}</span>`);
         }, (errMsg) => {

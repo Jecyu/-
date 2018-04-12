@@ -17,12 +17,13 @@ const _user = {
    */
   checkUsername(username, resolve, reject) {
     _ebio.request({
-      url: _ebio.getServerUrl('/users/check_valid.do?str=admin&type=username'),
+      url: _ebio.getServerUrl('/users/check_valid.do'),
+      // url: _ebio.getServerUrl('/users/check_valid.do?str=admin&type=username'),
       data: {
         type: 'username',
         str: username
       },
-      method: 'POST',
+      method: 'GET',
       success: resolve,
       error: reject
     });
@@ -50,7 +51,7 @@ const _user = {
   checkLogin(resolve, reject) {
     _ebio.request({
       url: _ebio.getServerUrl('/users/get_user_info.do'),
-      method: 'POST',
+      method: 'GET',
       success: resolve,
       error: reject
     });
