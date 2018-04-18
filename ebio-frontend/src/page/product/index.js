@@ -7,6 +7,8 @@
 
 require('./index.scss');
 require('../../page/common/index.js');
+const _file = require('../../service/file_service');
+const _ebio = require('../../util/ebio');
 
 const page = {
   // 初始化
@@ -84,6 +86,24 @@ const page = {
           break;
         }
       }
+    });
+
+    /* ===================== 下载文件 =========================== */
+    const file = {
+      path: 'stylesheets',
+      name: 'style.css'
+    };
+
+    $('.js-download').click((event) => {
+      event.stopPropagation();
+      let url = 'http://localhost:3000/files/download.do';
+      url = _ebio.addUrlParam(url, 'path', 'softwares');
+      url = _ebio.addUrlParam(url, 'name', 'node-v8.0.0-x64.msi');
+      // 不使用 ajax
+      window.location = url;
+
+      // 使用 ajax
+      // _file.downloadFile(file);
     });
   }
 };

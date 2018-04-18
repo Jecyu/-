@@ -11,6 +11,9 @@ const MongoStore = require('connect-mongo')(session);
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
+// 设置程序运行的根目录
+global.appRoot = path.resolve(__dirname);
+
 // express-winston logger makes sense BEFORE the router
 // app.use(expressWinston.logger({
 //   transports: [
@@ -25,7 +28,8 @@ const mongoose = require('mongoose');
 // }))
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const userRouter = require('./routes/user');
+const fileRouter = require('./routes/file');
 
 const app = express();
 
@@ -76,7 +80,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', userRouter);
+app.use('/files', fileRouter);
 
 // express-winston logger makes sense AFTER the router
 // app.use(expressWinston.errorLogger({

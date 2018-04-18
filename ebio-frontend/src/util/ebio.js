@@ -37,7 +37,6 @@ const ebio = {
       success: (res) => {
         // 请求成功
         if (res.status === 0) {
-          console.log(res);
           // success为函数，则进行回调传过去
           typeof params.success === 'function' && params.success(res.data, res.msg);
         } else if (res.status === 1) { // 请求数据错误
@@ -45,7 +44,6 @@ const ebio = {
         }
       },
       error: (err) => {
-        console.log(err);
         typeof params.error === 'function' && params.error(err.statusText);
       }
     });
@@ -81,6 +79,17 @@ const ebio = {
     // 渲染
     const result = compiledTemplate.render(data);
     return result;
+  },
+  /**
+   * 向现有的 URL的末尾添加查询字符串参数
+   * @param {*} url 查询的地址
+   * @param {*} name 查询的键
+   * @param {*} value 查询的值
+   */
+  addUrlParam(url, name, value) {
+    url += (url.indexOf('?') === -1 ? '?' : '&');
+    url += encodeURIComponent(name) + '=' + encodeURIComponent(value);
+    return url;
   },
   successTips(msg) {
     alert(msg || '操作成功');

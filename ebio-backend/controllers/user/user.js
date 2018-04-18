@@ -139,7 +139,7 @@ class User {
     // TODO 待处理 这里无法访问 req.session.user_id
     // 同理，退出时，也无法删除 req.session.user_id
     // console.log(req.session);
-    console.log(req.cookies);
+    // console.log(req.cookies);
 
     // 取得存取在数据库的 session user_id
 

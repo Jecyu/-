@@ -37,7 +37,7 @@ const filter = {
       return '文本题';
     }
     return 'unknown';
-  },
+  }
 };
 
 module.exports = filter;
