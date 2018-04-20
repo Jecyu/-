@@ -1,0 +1,24 @@
+{{#list}}
+<li class="posts-item">
+  <a href="./new_detail.html?new_id={{id}}" target="_blank">
+    <img class="posts-item__thumbnail" src="../../images/index/index_banner-2.jpg" alt="">
+    <div class="posts-item__desc">
+      <h2 class="posts-item__title">
+        <a href="###" class="link">
+          {{title}}        
+        </a>
+      </h2>
+      <p class="posts-item__detail">
+        <a href="###" class="link">{{content}}</a>
+      </p>
+      <p class="posts-item__meta">
+        <span class="posts-item__author">以太生物小秘书&nbsp; |</span>
+        <span class="posts-item__date">&nbsp;{{full_pdate}}</span>
+      </p>
+    </div>
+  </a>
+</li>
+{{/list}}
+{{^list}}
+  <p>暂时没有公司动态</p>
+{{/list}}

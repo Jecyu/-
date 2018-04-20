@@ -1,0 +1,61 @@
+/* pager */
+
+.pagination {
+  font-size: 16px;
+  font-family: "microsoft yahei";
+  color: #666666;
+}
+
+/* 页数按钮样式 */
+
+.pagination a {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1px solid #727272;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  color: #727272;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination a + a {
+  margin-left: 16px;
+}
+
+.pagination a.icon-ellipsis {
+  border: 0;
+  cursor: default;
+}
+
+#firstPage,
+#lastPage {
+  /* width: 50px;
+    /* color: #0073A9;
+    border: 1px solid #0073A9!important; */
+}
+
+#prePage,
+#nextPage {
+  /* width: 70px;
+    color: #0073A9;
+    border: 1px solid #0073A9!important; */
+}
+
+.pagination .current {
+  background: #4ac8bb;
+  border-color: #4ac8bb;
+  color: #fff;
+  cursor: default;
+}
+
+.totalPages {
+  margin: 0 10px;
+}
+
+.totalPages span,
+.totalSize span {
+  color: #4ac8bb;
+  margin: 0 5px;
+}

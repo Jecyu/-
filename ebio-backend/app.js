@@ -30,6 +30,7 @@ global.appRoot = path.resolve(__dirname);
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
 const fileRouter = require('./routes/file');
+const newRouter = require('./routes/new');
 
 const app = express();
 
@@ -82,6 +83,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/files', fileRouter);
+app.use('/news', newRouter);
 
 // express-winston logger makes sense AFTER the router
 // app.use(expressWinston.errorLogger({

@@ -1,0 +1,60 @@
+
+$basecolor: #172a88;
+$item1: #8fc320;
+$item2: #20c544;
+$item3: #203ec5;
+$item4: #20c5a7;
+$item5: #2091c5;
+$item6: #3ec520;
+$fontColor: #5f5f5f;
+
+.link {
+  color: $fontColor;
+  &:hover {
+    color: $item4;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+body {
+  // resolve the problem fixed the nav
+  // hidden the scroll bar
+  overflow-x: hidden;
+}
+
+
+.inner-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 120rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .inner-center {
+    width: 100rem;
+    padding: 0 5rem;
+  }
+}
+
+.clearfix::after {
+  content: ".";
+  display: block;
+
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.loading {
+  height: 10rem;
+  background: url(../../images/loading.svg) no-repeat center center;
+}

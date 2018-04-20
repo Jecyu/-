@@ -44,10 +44,10 @@ class File {
           //   }
           // };
           // res.sendFile(file_path, options);
-          res.download(file_path);
+          res.download(file_path, 'ebio.msi');
         }
       });
-    }
+    };
   }
 }
 

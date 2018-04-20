@@ -79,6 +79,9 @@ $active: #20c5a7;
       margin-right: 5rem;
       transition: all 0.5s ease;
 
+      .fa {
+        transition: all .3s;
+      }
       &.active {
         a {
           color: $active;
@@ -87,6 +90,9 @@ $active: #20c5a7;
       }
 
       &:hover {
+        .fa {
+          transform: rotateZ(180deg);
+        }
         .sub-nav-list {
           display: block;
         }
@@ -106,12 +112,21 @@ $active: #20c5a7;
       display: inline-block;
       margin-left: 2rem;
       cursor: pointer;
+      .fa {
+       transition: all .3s;
+      }
+      &:hover {
+        .fa {
+          transform: rotateZ(180deg);
+        }
+      }
     }
   }
     // sub-nav-list
   .sub-nav-list {
-    z-index: 10;
     display: none;
+
+    z-index: 10;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
