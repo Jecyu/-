@@ -38,6 +38,8 @@ const page = {
 
     /* ==== 提交表单 ==== */
     $('#submit-register').click((event) => {
+      // 触发失去焦点
+      $('.pass-reg form :input').trigger('blur');
       // 防止冒泡，出现多次请求 bug
       event.preventDefault();
       event.stopPropagation();
@@ -49,6 +51,7 @@ const page = {
     $('.mod-reg').keyup((e) => {
       // keyCode == 13 表示回车键
       if (e.keyCode === 13) {
+        $('.pass-reg form :input').trigger('blur');
         _this.submit();
       }
     });
@@ -73,7 +76,7 @@ const page = {
     // error 元素的长度
     const num_error = $('form .isError').length;
     if (num_error) {
-      // TODO 阻止表单提交, 需要禁用 按钮点击
+      return false; // 跳出函数
     }
     // 提交
     _user.register(formData, (res) => {

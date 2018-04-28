@@ -5,9 +5,10 @@
 const Hogan = require('hogan.js');
 
 const conf = {
-  // 因为接口地址和当前的静态文件地址是一样的，所以直接用空
   // serverHost: 'http://mock.eolinker.com/cf6IZykb556226864ab04e4e65fc27205f38da162a310f6?uri=www.eoLinker.com/api'
-  serverHost: 'http://localhost:3000'
+  serverHost: 'http://localhost:3000' // 本地测试
+  // 因为接口地址和当前的静态文件地址是一样的，所以直接用空
+  // serverHost: '' // 部署上线
 };
 
 const ebio = {
